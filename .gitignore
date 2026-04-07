@@ -1,0 +1,46 @@
+# ======================
+# Java / Spring Boot
+# ======================
+target/
+*.log
+*.class
+*.jar
+*.war
+
+# Maven wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# ======================
+# IDE Files
+# ======================
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# ======================
+# OS Files
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# Environment Files
+# ======================
+.env
+application-*.yml
+application-*.properties
+
+# ======================
+# Node (Angular later)
+# ======================
+node_modules/
+dist/
+
+# ======================
+# Logs
+# ======================
+logs/
+*.log

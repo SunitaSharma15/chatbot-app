@@ -1,0 +1,29 @@
+package com.chatbot.controller;
+
+import com.chatbot.dto.ChatRequest;
+import com.chatbot.dto.ChatResponse;
+import com.chatbot.service.ChatService;
+
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/chat")
+@CrossOrigin(origins = "*")
+public class ChatController {
+
+    private final ChatService chatService;
+    
+    
+
+    public ChatController(ChatService chatService) {
+		super();
+		this.chatService = chatService;
+	}
+
+
+
+	@PostMapping
+    public ChatResponse chat(@RequestBody ChatRequest request) {
+        return chatService.getResponse(request.getMessage());
+    }
+}

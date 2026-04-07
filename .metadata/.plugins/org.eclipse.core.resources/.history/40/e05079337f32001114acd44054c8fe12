@@ -1,0 +1,5 @@
+package com.chatbot.dto;
+
+public class ChatResponse {
+
+}
