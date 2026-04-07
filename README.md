@@ -1,4 +1,4 @@
-# AI Chatbot Application
+# 🤖 AI Chatbot Application
 
 A full-stack AI chatbot built using:
 
@@ -10,22 +10,23 @@ A full-stack AI chatbot built using:
 
 ---
 
-## Features
+## 🚀 Features
 
 - Chat with AI (local model, no API cost)
+- Context-aware chatbot (remembers conversation)
+- Session-based chat (multi-user support)
 - Clean architecture (Controller → Service → AI)
-- Scalable for future AI features
 - Production-style project structure
 
 ---
 
-## Architecture
+## 🏗️ Architecture
 
 Angular → Spring Boot → Ollama
 
 ---
 
-## Project Structure
+## 📦 Project Structure
 
 chatbot-app/
 │
@@ -36,7 +37,7 @@ chatbot-app/
 
 ---
 
-## Setup Instructions
+## ⚙️ Setup Instructions
 
 ### 1. Install Ollama
 https://ollama.com
@@ -44,3 +45,18 @@ https://ollama.com
 ### 2. Run Model
 ```bash
 ollama run llama3
+
+### 3. Run Backend
+cd backend
+mvn spring-boot:run
+
+### 4. Test API
+
+POST: http://localhost:8080/api/chat
+
+Body:
+
+{
+  "message": "Hello",
+  "sessionId": "user1"
+}
