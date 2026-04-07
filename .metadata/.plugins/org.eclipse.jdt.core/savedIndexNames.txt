@@ -47,7 +47,6 @@ INDEX VERSION 1.134+D:\AI_Developer_GenAI\chatbot-app\.metadata\.plugins\org.ecl
 344413546.index
 1831560887.index
 1345166016.index
-1965174767.index
 170273700.index
 1890398946.index
 3206240175.index

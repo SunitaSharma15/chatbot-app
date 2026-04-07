@@ -9,4 +9,6 @@ public interface ChatRepository extends JpaRepository<ChatMessage, Long> {
 
     // Fetch last 10 messages (IMPORTANT)
     List<ChatMessage> findTop10ByOrderByIdDesc();
+    
+    List<ChatMessage> findTop10BySessionIdOrderByIdDesc(String sessionId);
 }

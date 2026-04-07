@@ -18,8 +18,16 @@ public class ChatController {
 		this.chatService = chatService;
 	}
 
+	/*
+	 * @PostMapping public ChatResponse chat(@RequestBody ChatRequest request) {
+	 * return chatService.getResponse(request.getMessage()); }
+	 */
+	
 	@PostMapping
 	public ChatResponse chat(@RequestBody ChatRequest request) {
-		return chatService.getResponse(request.getMessage());
+	    return chatService.getResponse(
+	        request.getMessage(),
+	        request.getSessionId()   // ✅ pass sessionId
+	    );
 	}
 }

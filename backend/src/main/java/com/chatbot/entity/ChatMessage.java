@@ -15,6 +15,8 @@ public class ChatMessage {
     private String role;   // USER / BOT
     private String content;
     
+    private String sessionId;  // NEW 🔥
+    
     public ChatMessage() {
 		// TODO Auto-generated constructor stub
 	}
@@ -41,6 +43,14 @@ public class ChatMessage {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getSessionId() {
+		return sessionId;
+	}
+
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
 	}
     
     
