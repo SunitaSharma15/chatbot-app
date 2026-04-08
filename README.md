@@ -85,6 +85,36 @@ Vector Database integration
 Authentication (JWT)
 Streaming responses (real-time chat)
 
+
+##  RAG (Retrieval-Augmented Generation)
+
+- Upload PDF documents
+- Convert text into embeddings
+- Store in FAISS vector database
+- Retrieve relevant chunks
+- Generate answers using LLM
+
+---
+
+### Flow
+
+User → Query → Embedding → Vector Search → Context → LLM → Answer
+
+Update Status
+
+## Phase 4: RAG System (PDF Chat)
+
+Final Repo Structure
+chatbot-app/
+├── backend/
+├── ai-service/
+│   ├── main.py
+│   ├── rag.py   
+├── docs/
+├── README.md
+
+
+
 ### Author
 
 Sunita Sharma
