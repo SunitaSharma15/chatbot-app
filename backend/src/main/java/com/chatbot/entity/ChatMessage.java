@@ -1,5 +1,6 @@
 package com.chatbot.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +14,7 @@ public class ChatMessage {
     private Long id;
 
     private String role;   // USER / BOT
+    @Column(columnDefinition = "TEXT")   // ✅ FIX
     private String content;
     
     private String sessionId;  // NEW 🔥

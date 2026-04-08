@@ -20,7 +20,9 @@ public class ChatService {
         this.chatRepository = chatRepository;
     }
 
-    private final WebClient webClient = WebClient.create("http://localhost:11434");
+   // private final WebClient webClient = WebClient.create("http://localhost:11434");
+    
+    private final WebClient webClient = WebClient.create("http://localhost:8000");
 
     // ✅ ADD sessionId parameter
     public ChatResponse getResponse(String message, String sessionId) {
@@ -45,17 +47,23 @@ public class ChatService {
                 "\nBOT:";
 
         // 4. Call Ollama
+		/*
+		 * Map response = webClient.post() .uri("/api/generate") .bodyValue(Map.of(
+		 * "model", "llama3", "prompt", finalPrompt, "stream", false )) .retrieve()
+		 * .bodyToMono(Map.class) .block();
+		 * 
+		 * String botReply = (String) response.get("response");
+		 */
+        
         Map response = webClient.post()
-                .uri("/api/generate")
-                .bodyValue(Map.of(
-                        "model", "llama3",
-                        "prompt", finalPrompt,
-                        "stream", false
-                ))
-                .retrieve()
-                .bodyToMono(Map.class)
-                .block();
-
+        	    .uri("/chat")
+        	    .bodyValue(Map.of(
+        	        "prompt", finalPrompt
+        	    ))
+        	    .retrieve()
+        	    .bodyToMono(Map.class)
+        	    .block();
+        
         String botReply = (String) response.get("response");
 
         // 5. Save USER message
