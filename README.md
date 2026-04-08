@@ -1,36 +1,44 @@
-# 🤖 AI Chatbot Application
+#  AI Chatbot Application
 
 A full-stack AI chatbot built using:
 
 - Spring Boot (Backend)
-- Angular (Frontend - upcoming)
+- FastAPI (AI Service)
 - Ollama (Local LLM)
-- FastAPI (Planned)
+- Angular (Frontend - upcoming)
 - RAG (Upcoming)
 
 ---
 
-## 🚀 Features
+## Features
 
 - Chat with AI (local model, no API cost)
 - Context-aware chatbot (remembers conversation)
 - Session-based chat (multi-user support)
-- Clean architecture (Controller → Service → AI)
+- Microservice-based AI architecture
+- Clean layered design (Controller → Service → AI)
 - Production-style project structure
 
 ---
 
-## 🏗️ Architecture
+##  AI Architecture
 
-Angular → Spring Boot → Ollama
+Angular (upcoming)
+        ↓
+Spring Boot (API Gateway)
+        ↓
+FastAPI (AI Service)
+        ↓
+Ollama (LLM)
 
 ---
 
-## 📦 Project Structure
+##  Project Structure
 
 chatbot-app/
 │
 ├── backend/        # Spring Boot API
+├── ai-service/     # FastAPI AI service
 ├── frontend/       # Angular UI (coming soon)
 ├── docs/           # Documentation
 └── README.md
@@ -46,13 +54,16 @@ https://ollama.com
 ```bash
 ollama run llama3
 
-### 3. Run Backend
+3. Run FastAPI (AI Service)
+cd ai-service
+uvicorn main:app --reload
+4. Run Backend
 cd backend
 mvn spring-boot:run
+5. Test API
 
-### 4. Test API
-
-POST: http://localhost:8080/api/chat
+POST:
+http://localhost:8080/api/chat
 
 Body:
 
@@ -60,3 +71,20 @@ Body:
   "message": "Hello",
   "sessionId": "user1"
 }
+
+### Current Status
+
+ Phase 1: Chatbot with Ollama
+ Phase 2: Chat Memory + Session Support
+ Phase 3: FastAPI Integration
+ Phase 4: RAG System
+
+### Upcoming Features
+Chat with PDF (RAG)
+Vector Database integration
+Authentication (JWT)
+Streaming responses (real-time chat)
+
+### Author
+
+Sunita Sharma
